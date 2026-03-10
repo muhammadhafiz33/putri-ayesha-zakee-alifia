@@ -149,7 +149,7 @@ const App = () => {
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
         </div>
         <p className="text-xs font-light tracking-[0.15em] text-white uppercase">
-          Shoji <span className="text-white font-medium ml-2">{tokyoTime}</span>
+          daishoji <span className="text-white font-medium ml-2">{tokyoTime}</span>
           <span className="hidden md:inline ml-3 border-l border-white/20 pl-3 italic lowercase normal-case tracking-normal text-white">"aku masih memikirkanmu"</span>
         </p>
       </motion.div>
