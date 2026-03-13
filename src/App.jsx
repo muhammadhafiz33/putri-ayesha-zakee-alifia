@@ -27,6 +27,7 @@ const App = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [tokyoTime, setTokyoTime] = useState('');
   const [isAccepted, setIsAccepted] = useState(false);
+  const [anniversaryDate, setAnniversaryDate] = useState('');
   const [showAnniversaryModal, setShowAnniversaryModal] = useState(false);
   const [showPleaModal, setShowPleaModal] = useState(false);
   const [bgMusic, setBgMusic] = useState(null);
@@ -80,6 +81,15 @@ const App = () => {
 
   const handleYes = () => {
     setIsAccepted(true);
+
+    // Capture Real-time Anniversary Date in Indonesian
+    const now = new Date();
+    const months = [
+      'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
+    const formattedDate = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+    setAnniversaryDate(formattedDate);
 
     // Trigger Confession Confetti
     const end = Date.now() + 3 * 1000;
@@ -553,7 +563,7 @@ const App = () => {
                 <div className="space-y-2">
                   <h3 className="text-white/40 text-[10px] tracking-[0.6em] uppercase">Mulai Hari Ini</h3>
                   <h2 className="text-4xl md:text-6xl font-light tracking-widest text-white">
-                    10 MARET 2026
+                    {anniversaryDate || 'WAITING...'}
                   </h2>
                 </div>
 
